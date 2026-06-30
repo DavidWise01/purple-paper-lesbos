@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purple Paper · Lesbos — The Island That Taught the Rule to Bend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea:#170d20;        /* wine-dark ground */
+    --sea2:#1f1330;       /* lifted panel */
+    --sea3:#271838;       /* card */
+    --lead:#9a98a6;       /* lead grey - the rule */
+    --lead-dim:#5b5868;
+    --lead-edge:#3a3646;
+    --parch:#e9e2d2;      /* ink-on-dark */
+    --parch-dim:#b9b2a3;
+    --gold:#d9a441;       /* fossil amber */
+    --gold-dim:#a87f33;
+    --verd:#73b3a3;       /* verdigris / aegean */
+    --murex:#9a3d68;      /* tyrian / sea-snail purple */
+    --line:rgba(154,152,166,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--sea);color:var(--parch);
+    font-family:"Spectral",Georgia,serif;font-weight:400;
+    font-size:18px;line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 78% -8%, rgba(154,61,104,.12), transparent 60%),
+      radial-gradient(900px 700px at 10% 110%, rgba(115,179,163,.08), transparent 55%);
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 26px}
+  a{color:var(--verd);text-decoration:none;border-bottom:1px solid rgba(115,179,163,.3)}
+  a:hover{color:var(--gold);border-color:rgba(217,164,65,.5)}
+
+  /* ---- mono utility voice ---- */
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--lead);font-weight:500}
+
+  /* ---- HERO ---- */
+  header.hero{padding:64px 0 30px;position:relative;overflow:hidden}
+  .dossier{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;
+    color:var(--lead-dim);border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:30px}
+  .dossier b{color:var(--gold-dim);font-weight:500}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:300;line-height:.96;
+    margin:0;letter-spacing:-.5px}
+  .gk{display:block;font-size:clamp(54px,12vw,128px);color:var(--parch);
+    font-weight:300;letter-spacing:2px}
+  .en{display:block;font-size:clamp(26px,5.2vw,52px);font-style:italic;
+    color:var(--gold);font-weight:400;margin-top:2px}
+  .thesis{font-size:clamp(19px,2.6vw,23px);color:var(--parch-dim);max-width:34em;
+    margin:22px 0 0;font-weight:300}
+  .thesis em{color:var(--verd);font-style:italic}
+
+  /* ---- the bending rule (signature) ---- */
+  .ruleStage{margin:40px 0 6px;border:1px solid var(--line);border-radius:3px;
+    background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.18));
+    padding:8px 8px 4px;position:relative}
+  .ruleStage svg{display:block;width:100%;height:auto}
+  .ruleCap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--lead-dim);
+    letter-spacing:.08em;padding:6px 6px 4px}
+  .ruleCap em{color:var(--parch-dim);font-style:italic;font-family:"Spectral",serif;font-size:13px;letter-spacing:0}
+
+  /* ---- section scaffold ---- */
+  main{padding:18px 0 40px}
+  .plate{padding:54px 0;border-top:1px solid var(--line);position:relative}
+  .plate-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+  .numeral{font-family:"Cormorant Garamond",serif;font-size:46px;font-weight:400;
+    color:var(--gold);line-height:1;min-width:1.4em}
+  .plate h2{font-family:"Cormorant Garamond",serif;font-weight:500;
+    font-size:clamp(30px,5vw,44px);margin:0;line-height:1.02;letter-spacing:-.3px}
+  .plate .kicker{color:var(--lead);display:block;margin:6px 0 0}
+  .lede{font-size:20px;color:var(--parch);max-width:36em;margin:18px 0 0;font-weight:300}
+  p{max-width:36em}
+  .plate p{color:var(--parch-dim)}
+  .plate p strong{color:var(--parch);font-weight:500}
+  .pull{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
+    font-size:clamp(22px,3.4vw,30px);color:var(--gold);line-height:1.2;
+    border-left:2px solid var(--gold-dim);padding-left:20px;margin:26px 0;max-width:30em}
+
+  .thread{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--verd);background:rgba(115,179,163,.06);border:1px solid rgba(115,179,163,.16);
+    border-radius:3px;padding:12px 16px;margin:24px 0 0;max-width:40em;line-height:1.6}
+  .thread b{color:var(--gold);font-weight:500}
+  .thread::before{content:"⤳ thread ";color:var(--lead-dim)}
+
+  /* ---- figures ---- */
+  figure{margin:30px 0 0;border:1px solid var(--line);border-radius:3px;
+    background:rgba(0,0,0,.16);padding:22px 22px 14px}
+  figure svg{display:block;width:100%;height:auto}
+  figcaption{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--lead-dim);
+    letter-spacing:.06em;margin-top:14px;line-height:1.6}
+  figcaption b{color:var(--gold-dim);font-weight:500}
+
+  /* permineralization rings */
+  .ringWood{stroke:#caa06a}
+  .ringSil{stroke:var(--lead)}
+
+  /* fragments */
+  .frags{display:grid;gap:10px;margin-top:8px}
+  .frag{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
+    background:rgba(233,226,210,.04);border:1px solid var(--line);padding:9px 13px;border-radius:2px;
+    color:var(--parch-dim);position:relative}
+  .frag .src{color:var(--lead-dim);font-size:10.5px;letter-spacing:.1em}
+  .frag .miss{color:var(--lead-edge);background:repeating-linear-gradient(90deg,transparent,transparent 3px,rgba(154,152,166,.18) 3px,rgba(154,152,166,.18) 6px);border-radius:2px;padding:0 3px}
+  .frag.resolved{border-color:rgba(217,164,65,.4);background:rgba(217,164,65,.06);color:var(--parch)}
+  .frag.resolved .got{color:var(--gold)}
+
+  /* facing-page codex: greek | english */
+  .codex{margin:30px 0 0;border:1px solid var(--line);border-radius:3px;background:rgba(0,0,0,.18);overflow:hidden}
+  .codex-head{padding:16px 22px 13px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(154,61,104,.06),transparent)}
+  .codex-head .t{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--parch);font-weight:500;line-height:1.05}
+  .codex-head .s{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--lead-dim);letter-spacing:.1em;display:block;margin-top:4px}
+  .stanza{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+  .stanza:last-of-type{border-bottom:none}
+  .gkcol,.encol{padding:15px 22px}
+  .gkcol{border-right:1px solid var(--line);font-family:"Cormorant Garamond",serif;
+    font-size:19px;line-height:1.55;color:var(--parch-dim)}
+  .encol{font-family:"Spectral",serif;font-style:italic;font-size:16px;line-height:1.6;color:var(--parch)}
+  .gkcol .ln,.encol .ln{display:block}
+  .codex .crux{color:var(--gold);border-bottom:1px dotted var(--gold-dim)}
+  sup.m{color:var(--murex);font-style:normal;font-size:.66em;font-family:"IBM Plex Mono",monospace;padding-left:1px;vertical-align:super}
+  .stnum{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--lead-edge);letter-spacing:.1em}
+  .cruxkey{padding:16px 22px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;line-height:1.85;color:var(--lead-dim);border-top:1px solid var(--line)}
+  .cruxkey b{color:var(--murex);font-weight:500}
+  .cruxkey .w{color:var(--gold-dim)}
+  @media(max-width:640px){
+    .stanza{grid-template-columns:1fr}
+    .gkcol{border-right:none;border-bottom:1px solid var(--line)}
+    .gkcol{font-size:18px}
+  }
+
+  /* meter grid */
+  .meter{display:grid;gap:7px;margin-top:6px}
+  .mline{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .mlabel{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--lead-dim);
+    width:120px;flex:0 0 120px;letter-spacing:.04em}
+  .syl{height:22px;border-radius:2px;display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--sea)}
+  .long{background:var(--gold);width:42px}
+  .short{background:var(--verd);width:22px}
+  .anc{background:var(--lead);width:30px}
+
+  /* ---- synthesis ---- */
+  .synth{border-top:1px solid var(--line);padding:56px 0}
+  .synthGrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:28px}
+  .cell{background:var(--sea2);padding:20px 22px}
+  .cell .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold-dim)}
+  .cell .v{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--parch);
+    margin:4px 0 6px;font-weight:500;line-height:1.1}
+  .cell p{font-size:14.5px;margin:0;color:var(--parch-dim);max-width:none}
+
+  /* ---- witness ---- */
+  .witness{border:1px solid rgba(154,61,104,.4);background:rgba(154,61,104,.08);
+    border-radius:4px;padding:24px 26px;margin:34px 0}
+  .witness .eyebrow{color:var(--murex)}
+  .witness h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:26px;
+    margin:8px 0 10px;color:var(--parch)}
+  .witness p{color:var(--parch-dim);font-size:16px;max-width:42em;margin:0 0 10px}
+  .witness p:last-child{margin-bottom:0}
+
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--line);padding:40px 0 70px;color:var(--lead-dim);
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.05em;line-height:1.9}
+  footer .colophon{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;
+    color:var(--parch-dim);letter-spacing:0;margin-bottom:18px;max-width:34em;line-height:1.4}
+  footer h4{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--gold-dim);margin:18px 0 6px;font-weight:500}
+  footer a{color:var(--lead);border:none}
+  footer a:hover{color:var(--gold)}
+
+  @media(max-width:640px){
+    body{font-size:17px}
+    .numeral{font-size:34px;min-width:auto}
+    .plate-head{gap:12px}
+    .synthGrid{grid-template-columns:1fr}
+    .mlabel{width:auto;flex:1 0 100%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+  @media print{
+    body{background:#fff;color:#111}
+    .ruleStage,figure,.witness{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="dossier">
+    <span><b>PURPLE PAPER</b> · folio entry</span>
+    <span>39.20°N&nbsp;26.28°E</span>
+    <span>Aegean / Aeolis</span>
+    <span>subject: <b>ΛΕΣΒΟΣ</b></span>
+    <span>also catalogued: Sappho's island</span>
+  </div>
+
+  <h1>
+    <span class="gk">Λέσβος</span>
+    <span class="en">the rule that bends</span>
+  </h1>
+
+  <p class="thesis">One island gave the West two opposite-seeming gifts and they turn out to be the same gift: a way of <em>measuring what won't hold still</em>. A ruler that conforms to the stone. A method that conforms to the animal. A poetry that survives in pieces.</p>
+
+  <!-- SIGNATURE: the Lesbian rule relaxing onto a stone -->
+  <div class="ruleStage" aria-label="A straight lead rule relaxing to conform to an irregular stone contour">
+    <svg id="ruleSvg" viewBox="0 0 880 220" role="img">
+      <defs>
+        <linearGradient id="lead" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#bdbbc8"/>
+          <stop offset="0.5" stop-color="#8a8896"/>
+          <stop offset="1" stop-color="#5b5868"/>
+        </linearGradient>
+        <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3a2c44"/>
+          <stop offset="1" stop-color="#221833"/>
+        </linearGradient>
+      </defs>
+      <!-- the stone block with an irregular top edge -->
+      <path id="stonePath" fill="url(#stone)" stroke="#4a3b56" stroke-width="1"></path>
+      <!-- the flexible lead rule -->
+      <path id="rulePath" fill="none" stroke="url(#lead)" stroke-width="9" stroke-linecap="round"></path>
+      <!-- measure ticks riding on the rule -->
+      <g id="ticks" stroke="#2a2336" stroke-width="1.4"></g>
+    </svg>
+    <div class="ruleCap">
+      <span class="mono">instrument: μόλυβδος / leaden straightedge</span>
+      <em>“the rule adapts itself to the shape of the stone, and is not rigid”</em>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- I -->
+  <section class="plate">
+    <div class="plate-head">
+      <div class="numeral">I</div>
+      <div>
+        <h2>The Rule That Bends</h2>
+        <span class="kicker eyebrow">lesbian rule · equity · epieikeia</span>
+      </div>
+    </div>
+    <p class="lede">The masons of Lesbos worked in curved Ionic moulding, so they carried a ruler made of soft lead. You press it to the carved stone and it takes the curve — then you carry that curve to the next block. A straightedge that gives up its straightness on contact, and measures better for it.</p>
+    <p>Aristotle reached for exactly this instrument in <strong>Book V of the Nicomachean Ethics</strong> (Bekker 1137b) to explain <strong>equity</strong> — <span class="mono" style="color:var(--verd)">epieikeia</span>, the correction of law where law, being general, fails the particular case. Where the thing measured is indefinite, he says, the rule must be indefinite too: leaden, not rigid, conforming to the case in front of it. Equity is not the abandonment of standard. It is a standard with a compliant edge.</p>
+    <p class="pull">A flexible rule still measures. It does not throw away the standard — it makes the standard a function of the surface.</p>
+    <p>That distinction is the whole point, and it is easy to lose. The leaden rule is not "anything goes." It is precision relocated: from a fixed shape to a fixed <em>relationship</em> with whatever it touches. The bronze rule asks the stone to be straight. The lead rule asks only that the measurement be true.</p>
+    <p class="thread">rigid&nbsp;standard → <b>adaptive standard</b> → governance that conforms to the case without dissolving into it. The instrument predates every modern argument about discretion, exception, and the rule that knows when to give.</p>
+  </section>
+
+  <!-- II -->
+  <section class="plate">
+    <div class="plate-head">
+      <div class="numeral">II</div>
+      <div>
+        <h2>The Lagoon</h2>
+        <span class="kicker eyebrow">pyrrha / kalloni · observation before theory</span>
+      </div>
+    </div>
+    <p class="lede">In the centre of the island a shallow sea nearly closes into a lake — the Pyrrha lagoon, today the Gulf of Kalloni. In the 340s BCE a self-exiled philosopher spent roughly two years here doing something no one had systematically done before: <strong>looking, dissecting, and writing down what was actually there.</strong></p>
+    <p>This is where Aristotle assembled the material for the first treatises on animals — the histories, parts, movement, and generation that became biology. He watched dolphins surface and concluded they were not fish, because they breathed air. He talked to the fishermen and the beekeepers and weighed their reports against what he could see for himself. The biologist Armand Marie Leroi argues the move made here amounted to <strong>the invention of science</strong>: claims about the living world rooted in observation rather than speculation.</p>
+    <p class="pull">Lesbos was to Aristotle what the Galápagos would be to Darwin — the particular shore where a method got made.</p>
+    <p>His student on the island, <strong>Theophrastus of Eresos</strong> — a Lesbian by birth — took the plants while Aristotle took the animals, and became the father of botany. Same lagoon, same discipline: collect, compare, classify, then set theory against the catalogue and see what breaks.</p>
+    <p class="thread">observe → dissect → describe → classify → <b>pit theory against observation</b>. The loop you already run did not start as yours. It started in the mud of a Greek lagoon, and it has never needed updating — only re-running.</p>
+  </section>
+
+  <!-- III -->
+  <section class="plate">
+    <div class="plate-head">
+      <div class="numeral">III</div>
+      <div>
+        <h2>The Stone Forest</h2>
+        <span class="kicker eyebrow">sigri · permineralization · form outlives substrate</span>
+      </div>
+    </div>
+    <p class="lede">On the island's western end, around Sigri and Antissa, a forest stands turned to stone. Between <strong>17 and 20 million years ago</strong> a subtropical woodland of sequoia ancestors, pine, and cinnamon was buried under volcanic ash and lava — fast enough to cut off oxygen and stop decay cold.</p>
+    <p>What happened next is the quiet miracle. Mineral-laden water seeped in cell by cell and replaced the wood with silica, atom for atom, so completely that the <strong>growth rings, the wood's internal cell structure, even its colour</strong> survive — red, ochre, chestnut against the grey ash. The species reads as <span class="mono" style="color:var(--verd)">Taxodioxylon gypsaceum</span>, ancestor of the modern coastal redwood. The tree is entirely gone. The tree is entirely there.</p>
+
+    <figure>
+      <svg viewBox="0 0 760 230" role="img" aria-label="Tree-ring cross section, half wood and half silica, rings continuous across the seam">
+        <g id="ringsWood"></g>
+        <g id="ringsSil"></g>
+        <line x1="380" y1="20" x2="380" y2="210" stroke="#d9a441" stroke-width="1.3" stroke-dasharray="5 5"/>
+        <text x="120" y="222" fill="#caa06a" font-family="IBM Plex Mono,monospace" font-size="11">wood · the substrate</text>
+        <text x="470" y="222" fill="#9a98a6" font-family="IBM Plex Mono,monospace" font-size="11">silica · the replacement</text>
+      </svg>
+      <figcaption><b>permineralization.</b> The rings cross the seam unbroken. The material on the left and the material on the right share nothing — and carry the same pattern. The form is the invariant; the substrate is fungible.</figcaption>
+    </figure>
+
+    <p class="thread">a pattern that <b>persists through total substrate replacement</b>. This is the physical proof-of-concept for everything you mean by external persistence — the structure survives precisely because it stopped depending on the matter that first held it.</p>
+  </section>
+
+  <!-- IV -->
+  <section class="plate">
+    <div class="plate-head">
+      <div class="numeral">IV</div>
+      <div>
+        <h2>The Fragments</h2>
+        <span class="kicker eyebrow">sappho · reconstruction from partial data</span>
+      </div>
+    </div>
+    <p class="lede">Sappho of Eresos and Mytilene was, by ancient consensus, the greatest of the lyric poets — nine books of her work survived into the libraries of Alexandria. What reaches us is a wreck. <strong>One complete poem.</strong> Everything else is fragments: torn papyrus, single lines quoted by later grammarians to illustrate a point of dialect or metre, words recovered from the stuffing of mummies.</p>
+    <p>And yet we read her. Not despite the fragmentation but through a trick the fragmentation makes necessary: <strong>redundancy</strong>. The same line surfaces in a papyrus scrap and in a Roman critic's quotation; where one source has a hole, the other often has the word. A poem is rebuilt the way a corrupted message is — by overlapping independent copies until the gaps close. As recently as <strong>2014</strong>, the near-complete "Brothers Poem" emerged from a single papyrus, restoring text lost for a thousand years.</p>
+
+    <figure>
+      <div class="frags">
+        <div class="frag"><span class="src">P.Oxy. scrap ······</span><br>he seems to me <span class="miss">░░░░░░</span> equal to the gods, who <span class="miss">░░░░░</span> close to you</div>
+        <div class="frag"><span class="src">grammarian's quotation ···</span><br><span class="miss">░░░░░░░░</span> equal to the gods, who sits <span class="miss">░░░░</span> and listens</div>
+        <div class="frag resolved"><span class="src">resolved · union of sources</span><br><span class="got">he seems to me equal to the gods, who sits close to you and listens</span></div>
+      </div>
+      <figcaption><b>error-correction across witnesses.</b> No single source carries the line. Their overlap does. (Sense of Sappho fr. 31, paraphrased — the famous opening on watching the beloved across a room.)</figcaption>
+    </figure>
+
+    <div class="codex" aria-label="Sappho Fragment 1, Greek and English facing text">
+      <div class="codex-head">
+        <span class="t">Fragment 1 — the recovered text</span>
+        <span class="s">ode to aphrodite · seven sapphic stanzas · close rendering · ⁵ marked cruxes</span>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln"><span class="crux">Ποικιλόθρον'</span> ἀθανάτ' Ἀφρόδιτα,</span><span class="ln">παῖ Δίος δολόπλοκε, λίσσομαί σε,</span><span class="ln">μή μ' ἄσαισι μηδ' ὀνίαισι δάμνα,</span><span class="ln">πότνια, θῦμον,</span></div>
+        <div class="encol"><span class="ln">Aphrodite of the <span class="crux">dappled throne</span><sup class="m">1</sup>, immortal,</span><span class="ln">child of Zeus, weaver of wiles, I beg you:</span><span class="ln">do not break my spirit, my lady,</span><span class="ln">with anguish or with grief —</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">ἀλλὰ τυίδ' ἔλθ', αἴ ποτα κἀτέρωτα</span><span class="ln">τὰς ἔμας αὔδας ἀίοισα πήλυι</span><span class="ln">ἔκλυες, πάτρος δὲ δόμον λίποισα</span><span class="ln">χρύσιον ἦλθες</span></div>
+        <div class="encol"><span class="ln">but come to me, if ever at another time</span><span class="ln">you heard my voice from far off</span><span class="ln">and heeded it, and left your father's</span><span class="ln">golden house, and came,</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">ἄρμ' ὐπασδεύξαισα· κάλοι δέ σ' ἆγον</span><span class="ln">ὤκεες στροῦθοι περὶ γᾶς μελαίνας</span><span class="ln">πύκνα δίννεντες πτέρ' ἀπ' ὠράνω</span><span class="ln">αἴθερος διὰ μέσσω·</span></div>
+        <div class="encol"><span class="ln">your chariot yoked. Lovely, swift sparrows</span><span class="ln">drew you over the black earth,</span><span class="ln">wings whirling thick and fast, down from heaven</span><span class="ln">through the middle air.</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">αἶψα δ' ἐξίκοντο· σὺ δ', ὦ μάκαιρα,</span><span class="ln">μειδιαίσαισ' ἀθανάτῳ προσώπῳ</span><span class="ln">ἤρε' ὄττι <span class="crux">δηὖτε</span> πέπονθα κὤττι</span><span class="ln">δηὖτε κάλημμι</span></div>
+        <div class="encol"><span class="ln">Quickly they arrived. And you, blessed one,</span><span class="ln">a smile on your immortal face,</span><span class="ln">asked what I had suffered <span class="crux">this time</span><sup class="m">2</sup>, and why</span><span class="ln">this time I was calling,</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">κὤττι μοι μάλιστα θέλω γένεσθαι</span><span class="ln">μαινόλᾳ θύμῳ· τίνα δηὖτε πείθω</span><span class="ln"><span class="crux">ἄψ σ' ἄγην</span> ἐς σὰν φιλότατα; τίς σ', ὦ</span><span class="ln">Ψάπφ', ἀδικήει;</span></div>
+        <div class="encol"><span class="ln">and what, in my frenzied heart, I most wished</span><span class="ln">would happen: "Whom am I to persuade, this time,</span><span class="ln">to <span class="crux">lead back</span><sup class="m">3</sup> into your love? Who wrongs you,</span><span class="ln">Sappho?</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">καὶ γὰρ αἰ φεύγει, ταχέως διώξει,</span><span class="ln">αἰ δὲ δῶρα μὴ δέκετ', ἀλλὰ δώσει,</span><span class="ln">αἰ δὲ μὴ φίλει, ταχέως φιλήσει</span><span class="ln">κωὐκ <span class="crux">ἐθέλοισα</span>.</span></div>
+        <div class="encol"><span class="ln">For if she flees, soon she'll pursue;</span><span class="ln">if she refuses gifts, soon she'll give them;</span><span class="ln">and if she does not love, soon she'll love —</span><span class="ln"><span class="crux">even unwilling</span><sup class="m">4</sup>."</span></div>
+      </div>
+
+      <div class="stanza">
+        <div class="gkcol"><span class="ln">ἔλθε μοι καὶ νῦν, χαλέπαν δὲ λῦσον</span><span class="ln">ἐκ μερίμναν, ὄσσα δέ μοι τέλεσσαι</span><span class="ln">θῦμος ἰμέρρει, τέλεσον, σὺ δ' αὔτα</span><span class="ln"><span class="crux">σύμμαχος</span> ἔσσο.</span></div>
+        <div class="encol"><span class="ln">Come to me now as well; release me</span><span class="ln">from this harsh distress; all that my heart</span><span class="ln">longs to see done, accomplish — and you yourself</span><span class="ln">be my <span class="crux">ally in the fight</span><sup class="m">5</sup>.</span></div>
+      </div>
+
+      <div class="cruxkey">
+        <b>1</b> <span class="w">Ποικιλόθρον'</span> "dappled throne" — but one letter (–φρον) gives "intricate <i>mind</i>." Manuscripts split; the papyrus backs throne.<br>
+        <b>2</b> <span class="w">δηὖτε</span> "yet again, this time" — recurs three times as Aphrodite half-teases; it tilts the whole prayer toward the playful.<br>
+        <b>3</b> text is broken at line 19; <span class="w">ἄψ … ἄγην</span> "lead back" is a reconstruction, the least certain phrase in the poem.<br>
+        <b>4</b> <span class="w">ἐθέλοισα</span> — a <i>feminine</i> participle: this single word's ending is the whole basis for reading the beloved as a woman.<br>
+        <b>5</b> <span class="w">σύμμαχος</span> "battle-ally, comrade-in-arms" — the prayer ends by conscripting the goddess into a military campaign of love.
+      </div>
+    </div>
+
+    <p class="thread">whole reconstructed from <b>lossy, redundant fragments</b> — the readable cousin of your Voynich session. Here the cipher is just time, and the key is having more than one copy. Anchor in multiple places and the gaps can be closed later.</p>
+  </section>
+
+  <!-- V -->
+  <section class="plate">
+    <div class="plate-head">
+      <div class="numeral">V</div>
+      <div>
+        <h2>The Measure of Sound</h2>
+        <span class="kicker eyebrow">sapphic stanza · quantitative metre · a fixed encoding</span>
+      </div>
+    </div>
+    <p class="lede">Sappho's other measuring instrument was metrical. Aeolic verse is <strong>quantitative</strong> — it counts not stresses but <em>durations</em>, long syllables against short. The stanza she shaped so completely it carries her name is a strict template: three identical eleven-syllable lines, then one short clausula to close.</p>
+
+    <figure>
+      <div class="meter" aria-label="Scansion of the Sapphic stanza">
+        <div class="mline"><span class="mlabel">hendecasyllable</span>
+          <span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl anc">×</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl long">–</span></div>
+        <div class="mline"><span class="mlabel">hendecasyllable</span>
+          <span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl anc">×</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl long">–</span></div>
+        <div class="mline"><span class="mlabel">hendecasyllable</span>
+          <span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl anc">×</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl long">–</span></div>
+        <div class="mline"><span class="mlabel">adonean</span>
+          <span class="syl long">–</span><span class="syl short">‿</span><span class="syl short">‿</span><span class="syl long">–</span><span class="syl long">–</span></div>
+      </div>
+      <figcaption><b>– long&nbsp;&nbsp;‿ short&nbsp;&nbsp;× anceps (the one free slot, position&nbsp;4).</b> Worked on Sappho's actual opening line — <span style="color:var(--parch)">Ποικιλόθρον' ἀθανάτ' Ἀφρόδιτα</span> / <i>Poi&nbsp;ki&nbsp;ló&nbsp;thron'&nbsp;a&nbsp;thá&nbsp;nat'&nbsp;A&nbsp;phró&nbsp;di&nbsp;ta</i> maps straight onto row&nbsp;1. Ten of eleven positions are pinned; the line is a mask, not a free number. Its buried core (positions 5–8, <span style="color:var(--gold)">– ‿ ‿ –</span>) is the choriamb — the same brick the adonean surfaces at the close.</figcaption>
+    </figure>
+
+    <p>Set beside the leaden rule, the stanza is its mirror image — and that is the joke the island is telling. The mason's rule is <strong>maximally flexible</strong>: it takes any shape the stone has. The metre is <strong>maximally rigid</strong>: every line bends to it. Lesbos hands you both extremes of the same question — <em>who conforms to whom, the measure or the thing measured?</em> — and lets you choose per task.</p>
+    <p class="thread">meter as a <b>formal grammar / fixed-length encoding</b> — straight into your compiler and DSP threads. Prosody is a constraint solver running in the ear.</p>
+  </section>
+
+  <!-- SYNTHESIS -->
+  <section class="synth">
+    <div class="eyebrow">one island · five invariants</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5.5vw,50px);margin:10px 0 4px;letter-spacing:-.3px;">The same argument, five times</h2>
+    <p style="color:var(--parch-dim);max-width:38em;font-weight:300;">Strip the costumes off and every plate on this island is asking one question: <em style="color:var(--verd);font-style:italic">what is the relationship between a form and the stuff that happens to carry it?</em> Each answers differently — and together they cover the field.</p>
+
+    <div class="synthGrid">
+      <div class="cell"><div class="k">the rule</div><div class="v">Form yields to substrate</div><p>The lead conforms to the stone. Standard becomes a function of the surface.</p></div>
+      <div class="cell"><div class="k">the lagoon</div><div class="v">Substrate dictates form</div><p>Theory must conform to the animal. The catalogue overrules the idea.</p></div>
+      <div class="cell"><div class="k">the forest</div><div class="v">Form outlives substrate</div><p>Every cell swapped for silica; the pattern crosses the seam unbroken.</p></div>
+      <div class="cell"><div class="k">the fragments</div><div class="v">Form recovered from partial substrate</div><p>No copy is whole. Their overlap is. Redundancy closes the gaps.</p></div>
+      <div class="cell" style="grid-column:1/-1"><div class="k">the metre</div><div class="v">Substrate yields to form</div><p>Every word bends to the fixed pattern; the freedom is in which words clear it. The exact inverse of the rule it shares a coastline with.</p></div>
+    </div>
+  </section>
+
+  <!-- WITNESS -->
+  <div class="witness">
+    <div class="eyebrow">witness note · keep the function on</div>
+    <h3>This resonance is authored here, not excavated</h3>
+    <p>You asked for the audit, so: the tidy fit between this island and your own framework — adaptive governance, observe-then-anchor, substrate-independent persistence, reconstruction from redundancy — is <strong>a reading I imposed on the evidence</strong>, not a structure the ancients built. The lead rule was about moulding. The lagoon was about dolphins. Nobody on Lesbos was anticipating a governance kernel.</p>
+    <p>That doesn't make the paper false; the historical facts are checked and real. It makes the <em>through-line</em> a mnemonic — a way of holding five true things together — and not prior art. Treat it as a lens you chose, useful exactly as long as it stays labelled as chosen. The moment it starts feeling like the island agrees with you, that's the failure mode, and this box is where I flag it.</p>
+    <p style="color:var(--lead);font-family:'IBM Plex Mono',monospace;font-size:12.5px;">— and yes: every invariant above is roughly twenty-three centuries old. the curse holds. this time it has a postcode.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p class="colophon">Purple paper, Lesbos plate. Filed in the folio between the hyperboloid sheets and whatever the ruled surface leads to next — because a rule that bends to a curved surface is the through-line, not the digression.</p>
+
+  <h4>Verified sources</h4>
+  Aristotle, <i>Nicomachean Ethics</i> Bk V (Bekker 1137b) — the leaden Lesbian rule &amp; epieikeia<br>
+  A. M. Leroi, <i>The Lagoon: How Aristotle Invented Science</i> (2014) — Pyrrha / Kalloni biology<br>
+  Theophrastus of Eresos — <i>Enquiry into Plants</i>; father of botany<br>
+  Lesvos UNESCO Global Geopark / Natural History Museum, Sigri — petrified forest, 17–20 Ma, <i>Taxodioxylon gypsaceum</i><br>
+  Sappho, fr. 1 (Hymn to Aphrodite, the one complete poem) &amp; fr. 31; "Brothers Poem" recovered 2014<br>
+
+  <h4>Etymological knot</h4>
+  Both senses of "Lesbian" — the mason's flexible rule and the modern word for love between women — descend from this single island, the first by way of its leaden moulding-strips, the second by way of Sappho. One coastline, two abstractions, named by accident of geography.
+
+  <p style="margin-top:24px;color:var(--lead-edge)">μόλυβδος · 39.20°N 26.28°E · observe → map → re-observe → anchor</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- HERO: the lead rule relaxing onto the stone ---------- */
+  var W=880, N=120, x0=40, x1=840, span=x1-x0;
+  var baseY=120;            // resting line of the straight rule
+  // irregular stone top contour (sum of a few sines -> a believable carved curve)
+  function stoneY(t){       // t in [0,1]
+    var x = t*Math.PI;
+    return 150
+      + 26*Math.sin(2.1*x + 0.6)
+      + 14*Math.sin(4.7*x + 1.9)
+      + 7*Math.sin(8.3*x + 0.2);
+  }
+  var gap=14; // rule sits this far above the stone when conformed
+  function buildStonePath(){
+    var d="M"+x0+",220 L"+x0+","+stoneY(0).toFixed(1);
+    for(var i=1;i<=N;i++){var t=i/N;d+=" L"+(x0+t*span).toFixed(1)+","+stoneY(t).toFixed(1);}
+    d+=" L"+x1+",220 Z";
+    return d;
+  }
+  function rulePathAt(p){    // p=0 straight, p=1 fully conformed
+    var d="";
+    for(var i=0;i<=N;i++){
+      var t=i/N, x=(x0+t*span);
+      var target=stoneY(t)-gap;
+      var y=baseY+(target-baseY)*p;
+      d+=(i?" L":"M")+x.toFixed(1)+","+y.toFixed(1);
+    }
+    return d;
+  }
+  var rulePath=document.getElementById('rulePath');
+  var ticks=document.getElementById('ticks');
+  document.getElementById('stonePath').setAttribute('d', buildStonePath());
+
+  // measure ticks that ride along the rule
+  function drawTicks(p){
+    var s="";
+    for(var i=0;i<=N;i+=6){
+      var t=i/N, x=(x0+t*span);
+      var target=stoneY(t)-gap;
+      var y=baseY+(target-baseY)*p;
+      var len=(i%30===0)?10:5;
+      s+='<line x1="'+x.toFixed(1)+'" y1="'+(y-len).toFixed(1)+'" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'"/>';
+    }
+    ticks.innerHTML=s;
+  }
+
+  function setRule(p){ rulePath.setAttribute('d', rulePathAt(p)); drawTicks(p); }
+
+  if(reduce){ setRule(1); }
+  else{
+    setRule(0);
+    var started=false;
+    function ease(u){ return u<.5 ? 4*u*u*u : 1-Math.pow(-2*u+2,3)/2; } // easeInOutCubic
+    function run(){
+      if(started) return; started=true;
+      var dur=2400, t0=null;
+      function step(ts){
+        if(t0===null)t0=ts;
+        var u=Math.min((ts-t0)/dur,1);
+        setRule(ease(u));
+        if(u<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    // run once the hero is in view (it is, on load) — slight delay so fonts settle
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run();io.disconnect();}});},{threshold:.3});
+      io.observe(document.getElementById('ruleStage')||rulePath);
+      setTimeout(run, 1200); // fallback
+    } else { setTimeout(run, 600); }
+  }
+
+  /* ---------- FIG III: tree rings, half wood / half silica ---------- */
+  var rw=document.getElementById('ringsWood'), rs=document.getElementById('ringsSil');
+  if(rw && rs){
+    var cx=380, cy=115, ww="", ss="";
+    for(var r=14;r<=190;r+=14){
+      // gentle eccentricity so rings look organic
+      var ry=r*0.86;
+      // left half (wood) : clip via two arcs using paths
+      ww+='<path d="M '+cx+' '+(cy-ry)+' A '+r+' '+ry+' 0 0 0 '+cx+' '+(cy+ry)+'" fill="none" class="ringWood" stroke-width="1.4" opacity="'+(0.35+0.5*(1-r/200))+'"/>';
+      ss+='<path d="M '+cx+' '+(cy-ry)+' A '+r+' '+ry+' 0 0 1 '+cx+' '+(cy+ry)+'" fill="none" class="ringSil" stroke-width="1.4" opacity="'+(0.35+0.5*(1-r/200))+'"/>';
+    }
+    // pith
+    ww+='<circle cx="'+cx+'" cy="'+cy+'" r="3" fill="#caa06a"/>';
+    rw.innerHTML=ww; rs.innerHTML=ss;
+  }
+})();
+</script>
+</body>
+</html>
