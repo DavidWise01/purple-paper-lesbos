@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 153
+slug  : purple-paper-lesbos
+seal  : e704404fd085109a26a41a8eb49e030f3237b6afe88e37ab88645658fb5b1292
+prev  : 3fdd8d3aebc46176697b907df31775597bcd3fa9e9d0c67f24ec4f10d82c65d4
+link  : 90eb77f984701ab0b845caa29d31e0a9fe614d3ba0a2ba43aaf090c1ce7c1b63
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
